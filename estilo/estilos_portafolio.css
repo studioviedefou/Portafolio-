@@ -1,0 +1,292 @@
+
+  @font-face {
+    font-family: 'HelveticaNeueBoldItalic.otf';
+    src: url('../Gravtrac Bd Comp.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+	  
+} 
+body {
+	font-size: 30px;
+    font-family: 'Gravtrac Bd Comp.otf', Arial, sans-serif;
+    margin: 50;
+    background: #070707;
+    color: #FAF4F4;
+}
+
+/* ===========================
+   Estilos del Encabezado
+   =========================== */
+header {
+    background: #3E3B3B;
+    color: #F9F4F4;
+    padding: 50px 0 ;
+    text-align: center;
+}
+
+.perfil-img {
+    width: 250px;
+    border-radius: 20%;
+    margin-bottom: 15px;
+	opacity: 40%;
+}
+
+/* ===========================
+   Navegación Principal
+   =========================== */
+nav {
+    background: #0E0D0D;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 25px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background: #555555;
+}
+
+/* ===========================
+   Secciones Generales
+   =========================== */
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #090808;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #78103D;
+	
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/* ===========================
+   Carrusel de Fotos y Videos
+   =========================== */
+.carrusel, .video-carrusel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #070707;
+}
+
+/* Carrusel interno para animación de desplazamiento */
+.carrusel-inner, .video-carrusel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* Cada slide individual del carrusel */
+.carrusel-slide {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+/* Imágenes del carrusel */
+.carrusel img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* Botones de navegación del carrusel */
+.carrusel-btn, .video-carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    background: rgba(34, 34, 34, .5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 1.5em;
+    transition: background 0.2s;
+}
+
+.carrusel-btn:hover, .video-carrusel-btn:hover {
+    background: #621D5B;
+}
+
+.carrusel-btn.prev, .video-carrusel-btn.prev {
+    left: 10px;
+}
+
+.carrusel-btn.next, .video-carrusel-btn.next {
+    right: 10px;
+}
+
+/* ===========================
+   Carrusel de Videos
+   =========================== */
+.video-carrusel video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    background: #000;
+}
+
+/* Descripción bajo cada video */
+.video-desc {
+    text-align: center;
+    margin: 10px 0 20px 0;
+    color: #444;
+    font-size: 1em;
+}
+
+/* ===========================
+   Lista de Clientes
+   =========================== */
+.clientes-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.clientes-lista img {
+    max-width: 120px;
+    background: #eee;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+/* ===========================
+   Redes Sociales en Contacto
+   =========================== */
+.social-icons {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #E8DADA;
+    color: #5A1A3C;
+    font-size: 15em;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.social-icons a:hover {
+    background: #906796;
+    color: #000000;
+}
+
+/* ===========================
+   Overlay para ver imagen y descripción
+   =========================== */
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.7);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.overlay.active {
+    display: flex;
+}
+.overlay-img {
+    max-width: 90vw;
+    max-height: 70vh;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+.overlay-desc {
+    max-width: 90vw;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+    background: rgba(23,82,163,0.8);
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+.overlay-close {
+    position: absolute;
+    top: 32px;
+    right: 42px;
+    color: #fff;
+    font-size: 2.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10100;
+}
+
+/* ===========================
+   Pie de página
+   =========================== */
+footer {
+	color: #0E0D0D;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ===========================
+   Responsividad (Diseño Adaptativo)
+   =========================== */
+/* Pantallas grandes */
+@media (max-width: 1200px) {
+    section { max-width: 98vw; }
+    .carrusel, .video-carrusel { max-width: 98vw; }
+	 nav a { padding: 10px 10px; font-size: 1em; }
+    .perfil-img { width: 90px; }
+}
+/* Tablets */
+@media (max-width: 900px) {
+    section { max-width: 98vw; }
+    .carrusel, .video-carrusel { max-width: 95vw; }
+}
+/* Móviles grandes */
+@media (max-width: 700px) {
+    section { padding: 8px; }
+    .carrusel, .video-carrusel { max-width: 98vw; }
+    .carrusel img, .video-carrusel video { max-width: 98vw; }
+    nav a { padding: 10px 10px; font-size: 1em; }
+    .perfil-img { width: 90px; }
+}
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    header { padding: 18px 0; }
+    nav a { padding: 8px 5px; font-size: 0.95em; }
+    section { padding: 4px; }
+    h2 { font-size: 1.3em; }
+    .carrusel, .video-carrusel { max-width: 99vw; }
+    .carrusel img, .video-carrusel video { max-width: 99vw; }
+    .clientes-lista { gap: 10px; }
+    .clientes-lista img { max-width: 70px; }
+    .perfil-img { width: 60px; }
+    .overlay-desc { font-size: 3em; padding: 8px 8px; }
+}
